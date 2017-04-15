@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import AccountOptions from './classes/account-options';
 import AccountOptionsService from './services/account-options.service';
-import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import {AlertInterface} from "./interfaces/alert.interface";
+import {Location, LocationStrategy, PathLocationStrategy} from "@angular/common";
 
 @Component({
     selector: 'app-root',
@@ -20,33 +20,10 @@ export class AppComponent implements OnInit {
         title: '',
         message: ''
     };
-
-    // public defaultLanguageValues: Array<string> = [
-    //     'en',
-    //     'cn',
-    //     'it'
-    // ];
-    // public loginIdentifierConflictValues: Array<string> = [
-    //     'ignore',
-    //     'failOnSiteConflictingIdentity',
-    //     'failOnAnyConflictingIdentity'
-    // ];
-    // public loginIdentifierValues: Array<any> = [{
-    //     key: 'Email',
-    //     value: 'email'
-    // }, {
-    //     key: 'Username',
-    //     value: 'username'
-    // }, {
-    //     key: 'All',
-    //     value: 'email, username'
-    // }
-    // ];
-    private dataLoaded: boolean = false;
     private accountOptions: AccountOptions;
 
-    constructor(private accountOptionsService: AccountOptionsService,
-                private location: Location) {
+    constructor(public accountOptionsService: AccountOptionsService,
+                public location: Location) {
         this.readOnlyMode = location.isCurrentPathEqualTo('/readonly');
     }
 
@@ -62,7 +39,6 @@ export class AppComponent implements OnInit {
     }
 
     onGetAccountOptions(responseBody) {
-        console.log(responseBody);
         if (responseBody.errorCode) {
             this.errorHandler(responseBody.errorMessage);
         } else {
@@ -71,7 +47,6 @@ export class AppComponent implements OnInit {
     }
 
     setAccountOptions(formData) {
-        console.log('!!!!!!!!!!!!!!!!');
         this.accountOptionsService.setAccountOptions(formData)
             .subscribe((response) => {
                 this.onSetAccountOptions(response.json());
@@ -79,8 +54,6 @@ export class AppComponent implements OnInit {
     }
 
     onSetAccountOptions(responseBody) {
-        console.log(responseBody);
-
         if (responseBody.errorCode) {
             this.errorHandler(responseBody.errorMessage);
         } else {
