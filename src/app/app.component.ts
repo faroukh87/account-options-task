@@ -8,7 +8,7 @@ import {Location, LocationStrategy, PathLocationStrategy} from "@angular/common"
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    providers: [Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
+    providers: [AccountOptionsService, Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
 })
 export class AppComponent implements OnInit {
     private readOnlyMode: boolean;

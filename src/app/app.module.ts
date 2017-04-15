@@ -4,7 +4,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
-import AccountOptionsService from './services/account-options.service';
 import {AlertComponent} from './components/alert/alert.component';
 import {FormComponent} from './components/form/form.component';
 
@@ -21,7 +20,7 @@ import {FormComponent} from './components/form/form.component';
         JsonpModule,
         ReactiveFormsModule
     ],
-    providers: [AccountOptionsService],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {
