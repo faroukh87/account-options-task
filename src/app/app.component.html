@@ -1,3 +1,136 @@
-<h1>
-  {{title}}
-</h1>
+<!--<div *ngIf="alert.showSuccess || alert.showError" [ngClass]="{alert: true, 'alert-success': alert.showSuccess, 'alert-danger': alert.showError}">-->
+<!--<a href="#" class="close" aria-label="close" (click)="hideAlert()">&times;</a>-->
+<!--<strong>{{alert.title}}</strong> {{alert.message}}-->
+<!--</div>-->
+<app-alert [alert]="alert"
+           (hide)="hideAlert()"></app-alert>
+<app-form [accountOptions]="accountOptions"
+          (submitFormData)="onSubmit($event)"
+          [readOnlyMode]="readOnlyMode"
+          *ngIf="!!accountOptions"></app-form>
+
+<!--<div class="container top">-->
+<!--<h1 class="text-center">-->
+<!--Account Options-->
+<!--</h1>-->
+<!--<form #f="ngForm"-->
+<!--(ngSubmit)="onSubmit(f.value)"-->
+<!--*ngIf="dataLoaded">-->
+
+<!--<div class="form-check">-->
+<!--<label for="allowUnverifiedLogin"-->
+<!--class="form-check-label">-->
+<!--<input type="checkbox"-->
+<!--[disabled]="readOnlyMode"-->
+<!--name="allowUnverifiedLogin"-->
+<!--class="form-check-input"-->
+<!--id="allowUnverifiedLogin"-->
+<!--[(ngModel)]="accountOptions.allowUnverifiedLogin">-->
+<!--Allow Unverified Login-->
+<!--</label>-->
+<!--</div>-->
+
+<!--<div class="form-group">-->
+<!--<label for="defaultLanguage">Default Language:</label>-->
+<!--<select type="text"-->
+<!--name="defaultLanguage"-->
+<!--[disabled]="readOnlyMode"-->
+<!--class="form-control"-->
+<!--id="defaultLanguage"-->
+<!--[(ngModel)]="accountOptions.defaultLanguage">-->
+<!--<option *ngFor="let item of defaultLanguageValues">-->
+<!--{{item}}-->
+<!--</option>-->
+<!--</select>-->
+<!--</div>-->
+
+<!--<div class="form-group">-->
+<!--<label for="loginIdentifierConflict">Login Identifier Conflict:</label>-->
+<!--<select name="loginIdentifierConflict"-->
+<!--[disabled]="readOnlyMode"-->
+<!--class="form-control"-->
+<!--id="loginIdentifierConflict"-->
+<!--[(ngModel)]="accountOptions.loginIdentifierConflict">-->
+<!--<option *ngFor="let item of loginIdentifierConflictValues">-->
+<!--{{item}}-->
+<!--</option>-->
+<!--</select>-->
+<!--</div>-->
+
+<!--<div class="form-group">-->
+<!--<label>Login Identifiers:</label>-->
+<!--<label *ngFor="let identifier of loginIdentifierValues"-->
+<!--class="radio inline control-label radio-label">-->
+<!--<input type="radio"-->
+<!--name="loginIdentifiers"-->
+<!--[(ngModel)]="accountOptions.loginIdentifiers"-->
+<!--[disabled]="readOnlyMode"-->
+<!--[value]="identifier.value">-->
+<!--{{identifier.key}}-->
+<!--</label>-->
+
+<!--</div>-->
+
+<!--<div class="form-check">-->
+<!--<label for="preventLoginIDHarvesting" class="form-check-label">-->
+<!--<input type="checkbox"-->
+<!--id="preventLoginIDHarvesting"-->
+<!--name="preventLoginIDHarvesting"-->
+<!--class="form-check-input"-->
+<!--[disabled]="readOnlyMode"-->
+<!--[(ngModel)]="accountOptions.preventLoginIDHarvesting">-->
+<!--Prevent Login ID Harvesting-->
+<!--</label>-->
+
+<!--</div>-->
+
+<!--<div class="form-check">-->
+<!--<label for="sendWelcomeEmail"-->
+<!--class="form-check-label">-->
+<!--<input type="checkbox"-->
+<!--id="sendWelcomeEmail"-->
+<!--name="sendWelcomeEmail"-->
+<!--class="form-check-input"-->
+<!--[disabled]="readOnlyMode"-->
+<!--[(ngModel)]="accountOptions.sendWelcomeEmail">-->
+<!--Send Welcome Email-->
+<!--</label>-->
+
+<!--</div>-->
+
+<!--<div class="form-check">-->
+<!--<label for="verifyEmail"-->
+<!--class="form-check-label">-->
+<!--<input type="checkbox"-->
+<!--id="verifyEmail"-->
+<!--name="verifyEmail"-->
+<!--class="form-check-input"-->
+<!--[disabled]="readOnlyMode"-->
+<!--[(ngModel)]="accountOptions.verifyEmail">-->
+<!--Verify Email-->
+<!--</label>-->
+<!--</div>-->
+
+<!--<div class="form-check">-->
+<!--<label for="verifyProviderEmail"-->
+<!--class="form-check-label">-->
+<!--<input type="checkbox"-->
+<!--id="verifyProviderEmail"-->
+<!--name="verifyProviderEmail"-->
+<!--class="form-check-input"-->
+<!--[disabled]="readOnlyMode"-->
+<!--[(ngModel)]="accountOptions.verifyProviderEmail">-->
+<!--Verify Provider Email-->
+<!--</label>-->
+
+<!--</div>-->
+<!--<div class="text-center">-->
+<!--<button type="submit"-->
+<!--[disabled]="readOnlyMode"-->
+<!--class="btn btn-primary center-block">Update account options-->
+<!--</button>-->
+<!--</div>-->
+<!--</form>-->
+<!--</div>-->
+
+

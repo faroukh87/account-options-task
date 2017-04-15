@@ -1,0 +1,4 @@
+<div *ngIf="alert.showSuccess || alert.showError" [ngClass]="{alert: true, 'alert-success': alert.showSuccess, 'alert-danger': alert.showError}">
+    <a href="#" class="close" aria-label="close" (click)="hideAlert()">&times;</a>
+    <strong>{{alert.title}}</strong> {{alert.message}}
+</div>
